@@ -1,0 +1,75 @@
+﻿@page
+@model test2.Pages.Etudiants.creerModel
+@{
+}
+<br />
+<h2>Nouveau etudiant </h2>
+
+@if(Model.errorMsg.Length>0){
+    <div class="alert alert-danger alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMsg</strong>
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Fermer"></button>
+    </div>
+}
+@if (Model.successMsg.Length > 0)
+{
+    <div class="alert alert-success alert-dismissible fade show " role="alert">
+        <strong>@Model.successMsg</strong>
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Fermer"></button>
+    </div>
+}
+
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 ol-form-label" > Matricule </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="mat" value="@Model.etudiant.mat" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 ol-form-label"> Nom </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="nom" value="@Model.etudiant.nom" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+    <label class="col-sm-3 ol-form-label"> Prenom </label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" name="prenom" value="@Model.etudiant.prenom" />
+    </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 ol-form-label"> Date de naissance </label>
+        <div class="col-sm-6">
+            <input type="date" class="form-control" name="datenaiss" value="@Model.etudiant.datenaiss" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 ol-form-label" > E-mail </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.etudiant.email" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 ol-form-label"> Specialite </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="spec" value="@Model.etudiant.spec" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+         </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Annuler</a>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,39 @@
+﻿@page
+@model test2.Pages.Etudiants.IndexModel
+@{
+}
+<br />
+<h2>Liste des etudinats</h2>
+<a class="btn btn-primary btn-sm" href="/Etudiants/Creer">Nouveau Etudiant</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Matricule</th>
+            <th>Nom & Prenom</th>
+            <th>E-mail</th>
+            <th>Date de naissance</th>
+            <th>Specialite</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var etudiant in Model.listEtudiants){
+            <tr>
+                <th>@etudiant.id</th>
+                <th>@etudiant.mat</th>
+                <th>@etudiant.nom  @etudiant.prenom</th>
+                <th>@etudiant.email</th>
+                <th>@etudiant.datenaiss</th>
+                <th>@etudiant.spec</th>
+                <th>
+                    <a class="btn btn-primary btn-sm" href="/Etudiants/Modifier?id=@etudiant.id">Modifier</a>
+                    <a class="btn btn-danger btn-sm" href="/Etudiants/Supprimer?id@etudiant.id">Supprimer</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
